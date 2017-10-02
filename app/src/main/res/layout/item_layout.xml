@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginBottom="15dp">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -17,22 +19,25 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/txtNombre" />
+            android:id="@+id/txtNombre"
+            android:textSize="17sp"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/txtApellido"/>
+            android:id="@+id/txtApellido"
+            android:textSize="17sp"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/txtTelefono"/>
+            android:id="@+id/txtTelefono"
+            android:textSize="17sp"/>
 
     </LinearLayout>
 
@@ -42,15 +47,15 @@
         android:orientation="vertical">
 
         <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@android:drawable/ic_menu_share"
             android:id="@+id/btnCompartir">
         </Button>
 
         <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@android:drawable/ic_menu_call"
             android:id="@+id/btnLlamar">
         </Button>
