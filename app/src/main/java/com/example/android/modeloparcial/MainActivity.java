@@ -1,6 +1,7 @@
 package com.example.android.modeloparcial;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.op1:
+                Intent intent = new Intent(this, NuevoContacto.class);
+                startActivity(intent);
                 break;
 
             case R.id.op2:
