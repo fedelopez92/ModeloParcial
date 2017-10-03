@@ -39,10 +39,20 @@ public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClic
 
     @Override
     public void onClick(View view) {
+
+        if(view.getId() == R.id.btnCompartir){
+
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, "Contacto: " + modelo.getListaContactos().get(getAdapterPosition()).getNombre() + " - " + modelo.getListaContactos().get(getAdapterPosition()).getApellido() + " - " + modelo.getListaContactos().get(getAdapterPosition()).getTelefono());
+            intent.setType("text/plain");
+            activity.startActivity(intent);
+        }
+
         if(view.getId() == R.id.btnLlamar){
 
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+this.modelo.getListaContactos().get(getAdapterPosition()).getTelefono()));
-            this.activity.startActivity(intent);
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+modelo.getListaContactos().get(getAdapterPosition()).getTelefono()));
+            activity.startActivity(intent);
         }
     }
 }
