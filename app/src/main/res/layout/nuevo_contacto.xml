@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.modeloparcial.NuevoContacto"
+    tools:context="com.example.android.modeloparcial.ActivityNuevoContacto.NuevoContacto"
     android:orientation="vertical"
     android:layout_marginTop="30dp">
 
@@ -28,7 +28,8 @@
             android:layout_height="50dp"
             android:inputType="text"
             android:textSize="20dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:id="@+id/edNombre"/>
 
     </LinearLayout>
 
@@ -52,7 +53,8 @@
             android:layout_height="50dp"
             android:inputType="text"
             android:textSize="20dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:id="@+id/edApellido"/>
 
     </LinearLayout>
 
@@ -76,7 +78,8 @@
             android:layout_height="50dp"
             android:inputType="phone"
             android:textSize="20dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:id="@+id/edNumero"/>
 
     </LinearLayout>
 

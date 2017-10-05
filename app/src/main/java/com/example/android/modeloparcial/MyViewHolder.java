@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.android.modeloparcial.MainActivity.Modelo;
+
 /**
  * Created by android on 28/09/17.
  */
@@ -19,18 +21,16 @@ public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClic
     public TextView tvTelefono;
     public Button btnCompartir;
     public Button btnLlamar;
-    public Modelo modelo;
     public Activity activity;
 
 
-    public MyViewHolder(View itemView, Modelo modelo,  Activity activity) {
+    public MyViewHolder(View itemView,  Activity activity) {
         super(itemView);
         this.tvNombre = (TextView) itemView.findViewById(R.id.txtNombre);
         this.tvApellido = (TextView) itemView.findViewById(R.id.txtApellido);
         this.tvTelefono = (TextView) itemView.findViewById(R.id.txtTelefono);
         this.btnCompartir = (Button) itemView.findViewById(R.id.btnCompartir);
         this.btnLlamar = (Button) itemView.findViewById(R.id.btnLlamar);
-        this.modelo  = modelo;
         this.activity = activity;
 
         this.btnCompartir.setOnClickListener(this);
@@ -44,14 +44,14 @@ public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClic
 
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_TEXT, "Contacto: " + modelo.getListaContactos().get(getAdapterPosition()).getNombre() + " - " + modelo.getListaContactos().get(getAdapterPosition()).getApellido() + " - " + modelo.getListaContactos().get(getAdapterPosition()).getTelefono());
+            intent.putExtra(Intent.EXTRA_TEXT, "Contacto: " + Modelo.getListaContactos().get(getAdapterPosition()).getNombre() + " - " + Modelo.getListaContactos().get(getAdapterPosition()).getApellido() + " - " + Modelo.getListaContactos().get(getAdapterPosition()).getTelefono());
             intent.setType("text/plain");
             activity.startActivity(intent);
         }
 
         if(view.getId() == R.id.btnLlamar){
 
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+modelo.getListaContactos().get(getAdapterPosition()).getTelefono()));
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+Modelo.getListaContactos().get(getAdapterPosition()).getTelefono()));
             activity.startActivity(intent);
         }
     }
